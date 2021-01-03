@@ -1,0 +1,52 @@
+{% extends "base.html.j2" %}
+{% block title %} pyMLOps {% endblock %}
+{% block body %}
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{{ url_for('static',filename='/bootstrap-icons-1.2.2/cpu.svg') }}" alt="" width="30" height="24" class="d-inline-block align-top" style="fill: purple;">
+                pyMLOps
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projects">
+                            Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/datasets">
+                            Datasets
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/models">
+                            Models
+                        </a>
+                    </li>
+                    {# <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                            Disabled
+                        </a>
+                    </li> #}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+        <h1>pyMLOps</h1>
+        <p class="important">
+            Welcome to my awesome homepage.
+        </p>
+    </div>
+{% endblock %}
