@@ -1,12 +1,12 @@
 {% extends "base.html.j2" %}
-{% block title %} pyMLOps - Models {% endblock %}
+{% block title %} databook {% endblock %}
 {% block body %}
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img src="{{ url_for('static',filename='/bootstrap-icons-1.2.2/cpu.svg') }}" alt="" width="30" height="24" class="d-inline-block align-top" style="fill: purple;">
-                pyMLOps
+                databook
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -24,13 +24,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/datasets">
+                        <a class="nav-link active" aria-current="page" href="/datasets">
                             Datasets
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/models">
-                            Models
                         </a>
                     </li>
                 </ul>
@@ -39,9 +34,35 @@
     </nav>
     <!-- Page Content -->
     <div class="container">
-        <h1>Models</h1>
-        <p class="important">
+        <h1><code>{{ dataset.name }}</code></h1>
+        <p>
             Welcome to my awesome homepage.
         </p>
+        <h3>Dataset Description</h3>
+        <div class="p-3 mb-3 rounded bg-light">
+            {% for p in dataset.description %}
+                <p class="lead">{{ p }}</p>
+            {% endfor %}
+        </div>
+
+        <h3>Column Descriptions</h3>
+        <table class="table table-hover">
+            <thead>
+                <th scope="col"></th>
+                <th scope="col">Column Name</th>
+                <th scope="col">Data Type</th>
+                <th scope="col">Description</th>
+            </thead>
+            <tbody>
+                {% for c in dataset.cols %}
+                    <tr>
+                        <th>{{ loop.index0 }}</th>
+                        <td><var>{{ c.name }}</var></td>
+                        <td><code>{{ c.type }}</code></td>
+                        <td>{{ c.desc }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 {% endblock %}

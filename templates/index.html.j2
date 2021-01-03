@@ -1,12 +1,11 @@
 {% extends "base.html.j2" %}
-{% block title %} pyMLOps {% endblock %}
 {% block body %}
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img src="{{ url_for('static',filename='/bootstrap-icons-1.2.2/cpu.svg') }}" alt="" width="30" height="24" class="d-inline-block align-top" style="fill: purple;">
-                pyMLOps
+                databook
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,11 +27,6 @@
                             Datasets
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/models">
-                            Models
-                        </a>
-                    </li>
                     {# <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
                             Disabled
@@ -44,7 +38,7 @@
     </nav>
     <!-- Page Content -->
     <div class="container">
-        <h1>pyMLOps</h1>
+        <h1>databook</h1>
         <p class="important">
             Welcome to my awesome homepage.
         </p>
